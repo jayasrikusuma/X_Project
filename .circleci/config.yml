@@ -22,10 +22,10 @@ jobs:
           command: 'sudo npm install -g npm@5'
       - restore_cache:
           key: dependency-cache-{{ checksum "package-lock.json" }}
-      -run:
+      - run:
           name: install-npm
           command: npm install
-      -save_cache:
+      - save_cache:
           key: dependency-cache-{{ cheksum "package-lock.json" }}
           paths:
             - ./node_modules
