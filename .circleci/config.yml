@@ -19,7 +19,7 @@ workflows:
 
 jobs:
   build:
-    working_directory: ~/LABCI
+    working_directory: ~/PROJECT
     docker:
       - image: circleci/node:latest
     steps:
