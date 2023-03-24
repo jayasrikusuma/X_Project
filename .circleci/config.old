@@ -6,17 +6,17 @@ workflows:
     jobs:
       - build:
           filters:
-            branches: 
+            branches:
               only:
                 - main
       - deploy:
           filters:
-            branches: 
+            branches:
               only:
                 - main
           requires:
             - build
-        
+
 jobs:
   build:
     working_directory: ~/LABCI
@@ -25,9 +25,9 @@ jobs:
     steps:
       - checkout
       - setup_remote_docker
-      - run:
+      - run: 
           name: update-npm
-          command: 'sudo npm install -g npm@8.1.4'
+          command: 'sudo npm install -g npm@8.19.3'
       - restore_cache:
           key: dependency-cache-{{ checksum "package-lock.json" }}
       - run:
