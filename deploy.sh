@@ -5,7 +5,7 @@ sudo npm install -g pm2
 #stop any instance of our application running currently
 pm2 stop example_app
 # change directory into folder where application is downloaed
-cd LABCI/
+cd Project/
 #Install application dependecies
 npm install
 echo $PRIVATE_KEY > privatekey.pem
