@@ -57,5 +57,15 @@ router.get('/subtract', function(req, res, next) {
 
 });
 
+router.get('/rockPaperScissors', function(req, res, next) {
+  var result = 0
+  var {player1, player2} = req.query
+  console.log(req.query)
+
+  result = utils.rockPaperScissors(player1, player2) 
+
+  res.render('compute', { title: 'rockPaperScissors' ,result:result, player1, player2, symbol:" Vs "});  
+
+});
 
 module.exports = router;
