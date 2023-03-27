@@ -6,21 +6,32 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <a href="/math/add">add</a>
-    <a href="/math/divide">divide</a>
-    <a href="/math/multiply">multiply</a>
-    <a href="/math/subtract">subtract</a>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-    <form action="<%= title %>" method="get">
-      <input type="number" name="num1" /> <%= symbol %> 
-      <input type="number" name="num2" />
-      <br>
-      <button type="submit">submit</button>
-    </form>
-    <%if (result || (typeof result === 'number' && !isNaN(result))) { %>
-      <%= num1 %> <%= symbol %> <%= num2 %> = <%= result %>
-    <% } %>
+    <a href="/math/rockPaperScissors">RockPaperScissors</a>
+    
+    <h1>Welcome to <%= title %></h1>
+			<form action="<%= title %>" method="get">
+				<label for="player1">Player1</label>
+				<select required name="player1" id="player1" >
+					<option value="Rock">Rock</option>
+					<option value="Paper">Paper</option>
+					<option value="Scissors">Scissors</option>					
+				</select>
+				
+				<label for="player2">Player2</label>
+				<select required name="player2" id="player2" >
+					<option value="Rock">Rock</option>
+					<option value="Paper">Paper</option>
+					<option value="Scissors">Scissors</option>					
+				</select>	
+        <button type="submit">Check Winner</button>		
+			</form>
+
+      <br></br>
+  
+      
+      <p>Player1 selected => <%= player1 %></p>
+      <p>Player2 selected => <%= player2 %></p>
+      <p>Winner is <%= result %></p>
 
 
   </body>
